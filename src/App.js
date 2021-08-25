@@ -5,10 +5,10 @@ import POSTINGS from './postings.json'
 
 
 function App() {
-  const { pictures } = POSTINGS.visiblePictures//resizeUrl1200x1200
+  const { postingId, pictures } = POSTINGS.visiblePictures//resizeUrl1200x1200
 
   return (
-    <FadeCarousel pictures={pictures} />
+    <FadeCarousel postingId={postingId} pictures={pictures} />
   )
 }
 

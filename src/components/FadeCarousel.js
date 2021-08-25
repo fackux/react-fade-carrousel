@@ -6,7 +6,7 @@ import { FixedContainer, Image } from './FadeCarousel.styles';
 import useCarousel from '../hooks/useCarousel';
 
 const FadeCarousel = (props) => {
-    const { pictures } = props;
+    const { postingId, pictures } = props;
 
     const {
         state,
@@ -22,19 +22,19 @@ const FadeCarousel = (props) => {
             src={pictures[state.active].resizeUrl1200x1200}
         >
             {
-                pictures.map((p, i) => {
+                pictures.map((picture, i) => {
                     return (
                         <CSSTransition
-                            key={i}
+                            key={`pic_${postingId}_${i}`}
                             timeout={3000}
-                            classNames="my-node"
+                            classNames="fade-carousel"
                             mountOnEnter
 
                             in={state.show[i] && hovered}
                             onEntered={() => { nextImg() }}
                             onExit={() => { }}
                         >
-                            <Image alt="" className="my-node" src={p.resizeUrl1200x1200} />
+                            <Image alt="" className="fade-carousel" src={picture.resizeUrl1200x1200} />
                         </CSSTransition>
 
                     )

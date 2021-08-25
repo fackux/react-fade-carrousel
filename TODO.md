@@ -2,7 +2,7 @@
 
 
 ## Easy
-- [x] Agregar prop para `postingId`
+- [x] ~~Agregar prop para `postingId`~~
 - [ ] Parametrizar todo lo relacionado con las animaciones css
 
 ## Hard

@@ -25,17 +25,16 @@ const FadeCarousel = (props) => {
             height={height}
         >
             {
-                pictures.map((picture, i) => {
+                pictures.map((picture, index) => {
                     return (
                         <CSSTransition
-                            key={`pic_${postingId}_${i}`}
+                            key={`pic_${postingId}_${index}`}
                             timeout={3000}
                             classNames="re-fade-carousel"
                             mountOnEnter
-
-                            in={state.show[i] && hovered}
+                            unmountOnExit
+                            in={state.show[index] && hovered}
                             onEntered={() => { nextImg() }}
-                            onExit={() => { }}
                         >
                             <Image alt="" className="re-fade-carousel" src={picture.resizeUrl1200x1200} />
                         </CSSTransition>

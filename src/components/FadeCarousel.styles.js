@@ -9,7 +9,6 @@ export const FixedContainer = styled.div`
     background-position: center center;
     background-size: cover;
     overflow: hidden;
-    max-width: 620px;
 `;
 
 export const Image = styled.div`

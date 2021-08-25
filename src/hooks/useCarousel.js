@@ -11,7 +11,9 @@ const showReducer = (state, { type, payload }) => {
     }
 }
 
-const useCarousel = (pictures) => {
+const useCarousel = (pictures, config) => {
+    const reset = config?.reset || false
+
     const initialState = {
         active: 0,
         show: Array(pictures.length).fill(false)
@@ -36,11 +38,11 @@ const useCarousel = (pictures) => {
         changeImg(0)
     }, [])
 
-    // useEffect(() => {
-    //     if (!hovered) {
-    //         changeImg(0)
-    //     }
-    // }, [hovered])
+    useEffect(() => {
+        if (!hovered && reset) {
+            changeImg(0)
+        }
+    }, [hovered, reset])
 
     return {
         state, // {active: boolean, show: boolean[]}

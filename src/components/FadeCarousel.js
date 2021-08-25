@@ -45,7 +45,7 @@ const FadeCarousel = (props) => {
 }
 
 FadeCarousel.propTypes = {
-    pictures: PropTypes.arrayOf(PropTypes.string).isRequired
+    pictures: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default FadeCarousel;

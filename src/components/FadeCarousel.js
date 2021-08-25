@@ -1,8 +1,8 @@
-import React, { useEffect, useReducer, useState } from 'react'
+import React from 'react'
 import { CSSTransition } from 'react-transition-group'
 import PropTypes from 'prop-types'
 
-import { FixedContainer, Image } from './styles';
+import { FixedContainer, Image } from './FadeCarousel.styles';
 import useCarousel from '../hooks/useCarousel';
 
 const FadeCarousel = (props) => {

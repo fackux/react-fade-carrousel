@@ -7,7 +7,7 @@ function App() {
   const { postingId, pictures } = POSTINGS.visiblePictures//resizeUrl1200x1200
 
   return (
-    <FadeCarousel postingId={postingId} pictures={pictures} />
+    <FadeCarousel postingId={postingId} pictures={pictures} height={'359px'} />
   )
 }
 

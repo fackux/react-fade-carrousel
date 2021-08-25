@@ -8,7 +8,7 @@ import useCarousel from '../hooks/useCarousel';
 import '../styles/animations.config.css'
 
 const FadeCarousel = (props) => {
-    const { postingId, pictures } = props;
+    const { postingId, pictures, height} = props;
 
     const {
         state,
@@ -22,6 +22,7 @@ const FadeCarousel = (props) => {
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             src={pictures[state.active].resizeUrl1200x1200}
+            height={height}
         >
             {
                 pictures.map((picture, i) => {

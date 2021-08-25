@@ -2,14 +2,14 @@ import styled from 'styled-components'
 
 export const FixedContainer = styled.div`
     position: relative;
-    height: 380px;
+    height: ${props => props.height};
     background-color: #ccc;
     background-image: url(${props => props.src});
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     overflow: hidden;
-    max-width: 768px;
+    max-width: 620px;
 `;
 
 export const Image = styled.div`

@@ -3,45 +3,17 @@ import { CSSTransition } from 'react-transition-group'
 import PropTypes from 'prop-types'
 
 import { FixedContainer, Image } from './styles';
-
-const showReducer = (state, { type, payload }) => {
-    switch (type) {
-        case 'CHANGE_IMG':
-            let _show = Array(state.show.length).fill(false);
-            _show[payload] = true
-            return { active: payload, show: _show };
-        default:
-            return { ...state };
-    }
-}
+import useCarousel from '../hooks/useCarousel';
 
 const FadeCarousel = (props) => {
-    const { pictures } = props; //POSTINGS.visiblePictures//resizeUrl1200x1200
+    const { pictures } = props;
 
-    const [hovered, setHovered] = useState(false)
-
-    const [state, dispatch] = useReducer(showReducer, { active: 0, show: Array(pictures.length).fill(false) })
-
-    const changeImg = (index) => dispatch({ type: 'CHANGE_IMG', payload: index })
-
-    const nextImg = () => {
-        const next = state.active + 1;
-        if (next >= pictures.length) {
-            changeImg(0)
-        } else {
-            changeImg(next)
-        }
-    }
-
-    useEffect(() => {
-        changeImg(0)
-    }, [])
-
-    // useEffect(() => {
-    //     if (!hovered) {
-    //         changeImg(0)
-    //     }
-    // }, [hovered])
+    const {
+        state,
+        hovered,
+        setHovered,
+        nextImg
+    } = useCarousel(pictures)
 
     return (
         <FixedContainer

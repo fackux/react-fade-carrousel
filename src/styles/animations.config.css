@@ -1,21 +1,21 @@
-.fade-carousel-enter {
+.re-fade-carousel-enter {
   opacity: 0;
   transform: scale(1);
   transition:  opacity 1s;
 }
-.fade-carousel-enter-active {
+.re-fade-carousel-enter-active {
   opacity: 1;
   transform: scale(1.5);
   transition:  transform 2.5s 0.5s ease-out, opacity 0.4s;
 }
 
-.fade-carousel-exit-active {
+.re-fade-carousel-exit-active {
   opacity: 0;
   transform: scale(1.5);
   filter: blur(2px);
   transition:  opacity 1s, filter 0.4s;
 }
 
-.fade-carousel-exit-done{
+.re-fade-carousel-exit-done{
 	opacity: 0;
   }

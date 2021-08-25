@@ -1,5 +1,4 @@
 import FadeCarousel from './components/FadeCarousel';
-import './styles.css'
 
 import POSTINGS from './postings.json'
 

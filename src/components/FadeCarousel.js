@@ -1,9 +1,8 @@
 import React, { useEffect, useReducer, useState } from 'react'
 import { CSSTransition } from 'react-transition-group'
+import PropTypes from 'prop-types'
 
 import { FixedContainer, Image } from './styles';
-
-import POSTINGS from '../../postings.json'
 
 const showReducer = (state, { type, payload }) => {
     switch (type) {
@@ -16,8 +15,8 @@ const showReducer = (state, { type, payload }) => {
     }
 }
 
-const Prueba = () => {
-    const { pictures } = POSTINGS.visiblePictures//resizeUrl1200x1200
+const FadeCarousel = (props) => {
+    const { pictures } = props; //POSTINGS.visiblePictures//resizeUrl1200x1200
 
     const [hovered, setHovered] = useState(false)
 
@@ -58,7 +57,7 @@ const Prueba = () => {
                             timeout={3000}
                             classNames="my-node"
                             mountOnEnter
-                            
+
                             in={state.show[i] && hovered}
                             onEntered={() => { nextImg() }}
                             onExit={() => { }}
@@ -73,4 +72,8 @@ const Prueba = () => {
     )
 }
 
-export default Prueba
+FadeCarousel.propTypes = {
+    pictures: PropTypes.arrayOf(PropTypes.string).isRequired
+}
+
+export default FadeCarousel;

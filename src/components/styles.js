@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const FixedContainer = styled.div`
-    position: relative;height: 380px;
-    height: 480px;
+    position: relative;
+    height: 380px;
     background-color: #ccc;
     background-image: url(${props => props.src});
     background-repeat: no-repeat;
@@ -10,13 +10,14 @@ export const FixedContainer = styled.div`
     background-size: cover;
     overflow: hidden;
     max-width: 768px;
+    margin: 0 auto;
 `;
 
 export const Image = styled.div`
     position: absolute;
     top: 0;
     left: 0;
-    height: 480px;
+    height: 100%;
     width: 100%;
     background-image: url(${props => props.src});
     background-repeat: no-repeat;

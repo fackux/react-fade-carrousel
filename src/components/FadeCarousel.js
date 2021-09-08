@@ -21,7 +21,7 @@ const FadeCarousel = (props) => {
         <FixedContainer
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            src={pictures[state.active].resizeUrl1200x1200}
+            src={pictures[state.active]}
             height={height}
         >
             {
@@ -36,7 +36,7 @@ const FadeCarousel = (props) => {
                             in={state.show[index] && hovered}
                             onEntered={() => { nextImg() }}
                         >
-                            <Image alt="" className="re-fade-carousel" src={picture.resizeUrl1200x1200} />
+                            <Image alt="" className="re-fade-carousel" src={picture} />
                         </CSSTransition>
 
                     )

@@ -11,6 +11,15 @@ const showReducer = (state, { type, payload }) => {
     }
 }
 
+async function preloadIMages(pictures){
+    window.pictures = [];
+    for(const src of pictures) {
+        let img = new Image();
+        img.src = src;
+        window.pictures.push(img);
+    }
+}
+
 const useCarousel = (pictures, config) => {
     const reset = config?.reset || false
 
@@ -37,6 +46,10 @@ const useCarousel = (pictures, config) => {
     useEffect(() => {
         changeImg(0)
     }, [])
+
+    useEffect(() => {
+        preloadIMages(pictures)
+    }, [pictures])
 
     useEffect(() => {
         if (!hovered && reset) {

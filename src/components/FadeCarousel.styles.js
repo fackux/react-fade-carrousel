@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const FixedContainer = styled.div`
+    cursor: pointer;
     position: relative;
     height: ${props => props.height};
     background-color: #ccc;
